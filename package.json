@@ -1,0 +1,37 @@
+{
+    "name": "wp-geo-query",
+    "description": "Perform location based searches in WordPress.",
+    "author": "Micah Wood <micah@wpscholar.com> (https://wpscholar.com)",
+    "license": "GPL-2.0-or-later",
+    "private": true,
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wp-forge/wp-geo-query.git"
+    },
+    "bugs": {
+        "url": "https://github.com/wp-forge/wp-geo-query/issues"
+    },
+    "homepage": "https://github.com/wp-forge/wp-geo-query#readme",
+    "devDependencies": {
+        "husky": "^4.2.5",
+        "lint-staged": "^10.2.2",
+        "yaml-lint": "^1.2.4"
+    },
+    "scripts": {
+        "lint": "yamllint --ignore=node_modules/** **/*.yml",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "**/*.yml": [
+            "yamllint --ignore=node_modues/**"
+        ],
+        "**/*.php": [
+            "vendor/bin/phpcs --standard=WPScholar -s"
+        ]
+    }
+}

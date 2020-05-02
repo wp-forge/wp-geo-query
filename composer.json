@@ -1,0 +1,35 @@
+{
+    "name": "wp-forge/wp-geo-query",
+    "description": "Perform location based searches in WordPress.",
+    "type": "library",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Micah Wood",
+            "email": "micah@wpscholar.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "WP_Forge\\GeoQuery\\": "source"
+        },
+        "files": [
+            "source/bootstrap.php"
+        ]
+    },
+    "require-dev": {
+        "wpscholar/phpcs-standards-wpscholar": "^1.0"
+    },
+    "scripts": {
+        "fix": [
+            "vendor/bin/phpcbf . --standard=WPScholar"
+        ],
+        "lint": [
+            "vendor/bin/phpcs . --standard=WPScholar -s"
+        ]
+    },
+    "scripts-descriptions": {
+        "fix": "Automatically fix coding standards issues where possible.",
+        "lint": "Check files against coding standards."
+    }
+}
