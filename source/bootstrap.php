@@ -12,5 +12,5 @@ if ( ! function_exists( 'wpforge_add_wp_geo_query_hooks' ) && function_exists( '
 	}
 
 	add_action( 'after_setup_theme', 'wpforge_add_wp_geo_query_hooks' );
-	
+
 }

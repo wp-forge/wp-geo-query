@@ -10,9 +10,9 @@
         }
     ],
     "autoload": {
-        "psr-4": {
-            "WP_Forge\\GeoQuery\\": "source/"
-        },
+        "classmap": [
+            "source/GeoQuery.php"
+        ],
         "files": [
             "source/bootstrap.php"
         ]
