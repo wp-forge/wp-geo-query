@@ -186,16 +186,16 @@ class GeoQuery {
 
 		$sql = <<<'FORMULA'
 ( 
-	%1$f * ACOS( 
-		COS( RADIANS( %2$f ) ) * 
+	%f * ACOS( 
+		COS( RADIANS( %f ) ) * 
 		COS( RADIANS( geo_query_lat.meta_value ) ) * 
-		COS( RADIANS( geo_query_lng.meta_value ) - RADIANS( %3$f ) ) + 
-		SIN( RADIANS( %2$f ) ) * SIN( RADIANS( geo_query_lat.meta_value ) ) 
+		COS( RADIANS( geo_query_lng.meta_value ) - RADIANS( %f ) ) + 
+		SIN( RADIANS( %f ) ) * SIN( RADIANS( geo_query_lat.meta_value ) ) 
 	)
 )
 FORMULA;
 
-		return $wpdb->prepare( $sql, $radius, $geo['lat'], $geo['lng'] ); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
+		return $wpdb->prepare( $sql, $radius, $geo['lat'], $geo['lng'], $geo['lat'] ); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
 	}
 
 }
