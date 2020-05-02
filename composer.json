@@ -11,7 +11,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "WP_Forge\\GeoQuery\\": "source"
+            "WP_Forge\\GeoQuery\\": "source/"
         },
         "files": [
             "source/bootstrap.php"
