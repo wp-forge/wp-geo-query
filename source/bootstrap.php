@@ -12,5 +12,4 @@ if ( ! function_exists( 'wpforge_initialize_wp_geo_query' ) ) {
 	if ( function_exists( 'add_action' ) ) {
 		wpforge_initialize_wp_geo_query();
 	}
-
 }
